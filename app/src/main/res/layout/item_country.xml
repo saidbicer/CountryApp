@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <data>
+
+        <variable
+            name="country"
+            type="com.said.contryapp.model.Country" />
+
+        <variable
+            name="listener"
+            type="com.said.contryapp.adapter.CountryClickListener" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{listener::onCountryClicked}"
         android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvUuid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(country.uuid)}"
+            android:visibility="gone" />
+
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:downloadUrl="@{country.countryFlagUrl}"
             android:padding="3dp"
             android:src="@mipmap/ic_launcher" />
 
@@ -25,7 +47,7 @@
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@{country.countryName}"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -33,7 +55,7 @@
                 android:id="@+id/tvRegion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Region" />
+                android:text="@{country.countryRegion}" />
 
         </LinearLayout>
 

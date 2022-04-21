@@ -1,6 +1,7 @@
 package com.said.contryapp.util
 
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.said.contryapp.R
 
@@ -8,7 +9,7 @@ import com.said.contryapp.R
 //
 //}
 
-fun ImageView.downloadFromUrl(url : String?){
+fun ImageView.downloadFromUrl(url: String?) {
     url?.let {
         Glide
             .with(context)
@@ -17,5 +18,9 @@ fun ImageView.downloadFromUrl(url : String?){
             .placeholder(R.mipmap.ic_launcher)
             .into(this);
     }
+}
 
+@BindingAdapter("android:downloadUrl")
+fun downloadUmage(view: ImageView, url: String?) {
+    view.downloadFromUrl(url)
 }
