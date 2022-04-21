@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.item_country.view.*
 import java.util.logging.Logger
 import kotlinx.android.synthetic.main.fragment_detail.view.imageView as imageView1
 
-class CountryAdapter(var countryList: List<Country>) :
+class CountryAdapter(private var countryList: List<Country>) :
     RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() , CountryClickListener{
 
     class CountryViewHolder(var view: ItemCountryBinding) : RecyclerView.ViewHolder(view.root) {

@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.said.contryapp.model.Country" />
+    </data>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,6 +19,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:downloadUrl="@{selectedCountry.countryFlagUrl}"
             android:src="@mipmap/ic_launcher" />
 
 
@@ -28,35 +36,35 @@
                 android:id="@+id/countryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test"
+                android:text="@{selectedCountry.countryName}"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/countryCapital"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test"
+                android:text="@{selectedCountry.countryCapital}"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/countryRegion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test"
+                android:text="@{selectedCountry.countryRegion}"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/countryCurrency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test"
+                android:text="@{selectedCountry.countryCurrency}"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/countryLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test"
+                android:text="@{selectedCountry.countryLanguage}"
                 android:textSize="20sp" />
 
         </LinearLayout>
